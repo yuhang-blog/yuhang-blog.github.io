@@ -150,6 +150,267 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-rsa" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/12/rsa/">RSA算法的初识</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/12/rsa/" class="archive-article-date">
+  	<time datetime="2021-08-12T10:48:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="RSA算法原理"><a href="#RSA算法原理" class="headerlink" title="RSA算法原理"></a>RSA算法原理</h2><p>寻找两个大素数，将它们的乘积公开作为加密密钥，寻找两个大素数简单，但是将他们的乘积进行因式分解很困难</p>
+<h2 id="RSA算法使用"><a href="#RSA算法使用" class="headerlink" title="RSA算法使用"></a>RSA算法使用</h2><p>RSA算法有两种使用方法，一种是：公钥加密，私钥解密，另一种是：私钥加密，公钥解密</p>
+<h3 id="加密-解密"><a href="#加密-解密" class="headerlink" title="加密/解密"></a>加密/解密</h3><ul>
+<li>苏珊需要和鲍勃进行加密通信，鲍勃制作了一对RSA密钥，私钥给自己用，公钥给苏珊用</li>
+</ul>
+<img src="/2021/08/12/rsa/A.png" class title="A">
+
+<ul>
+<li>苏珊给鲍勃写了一封信，使用了鲍勃的公钥进行加密</li>
+</ul>
+<img src="/2021/08/12/rsa/B.png" class title="B">
+
+<ul>
+<li>鲍勃收到加密信，使用自己的私钥进行解密看到信件内容</li>
+</ul>
+<img src="/2021/08/12/rsa/C.png" class title="C">
+
+<h3 id="签名-验签"><a href="#签名-验签" class="headerlink" title="签名/验签"></a>签名/验签</h3><ul>
+<li>鲍勃给苏珊写回信，利用哈希函数将消息生成消息摘要</li>
+</ul>
+<img src="/2021/08/12/rsa/D.png" class title="D">
+
+<ul>
+<li>鲍勃利用自己的私钥对消息摘要进行加密生成数字签名</li>
+</ul>
+<img src="/2021/08/12/rsa/E.png" class title="E">
+
+<ul>
+<li>鲍勃将回信和数字签名一起发送给苏珊</li>
+</ul>
+<img src="/2021/08/12/rsa/F.png" class title="F">
+
+<ul>
+<li><p>苏珊收到来信后，利用鲍勃的公钥将数字签名进行解密得到消息摘要，苏珊可以判定此信为鲍勃发送的(公钥无法签名)</p>
+<img src="/2021/08/12/rsa/G.png" class title="G">
+</li>
+<li><p>苏珊利用哈希函数将消息生成消息摘要，然后利用此消息摘要和公钥解密的消息摘要进行比较，如果两个消息摘要相同则消息未被篡改</p>
+</li>
+</ul>
+<img src="/2021/08/12/rsa/H.png" class title="H">
+
+<ul>
+<li>数字签名保证了数据的完整性和发送角色的不可抵赖性</li>
+</ul>
+<h2 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h2><p>哈希函数就是能将任意长度的数据映射为固定长度的数据的函数。哈希函数返回的值被叫做哈希值。</p>
+<h2 id="消息摘要"><a href="#消息摘要" class="headerlink" title="消息摘要"></a>消息摘要</h2><p>将长度不固定的消息作为输入参数，运行特定的Hash函数，生成固定长度的输出，这个输出就是Hash，也称为这个消息的消息摘要</p>
+<p>消息摘要算法是hash算法的一种，具有以下特点：</p>
+<ul>
+<li><p>无论输入的消息有多长，计算出来的消息摘要的长度总是固定的，计算出的结果越长，一般认为该摘要算法越安全</p>
+</li>
+<li><p>输入的消息不同，产生的消息摘要必不同，输入的消息相同，产生的消息摘要一定是相同的</p>
+</li>
+<li><p>单向不可逆</p>
+</li>
+</ul>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>对RSA算法有了大致了解之后，下篇利用python实现签名和验签的过程。↓↓↓（打赏区）</p>
+<p> written by：航/2021/8/12</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">学习篇</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RSA算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/12/rsa/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Nanopi-Intranet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/09/Nanopi-Intranet/">Nanopi NEO建立内网访问的博客</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/09/Nanopi-Intranet/" class="archive-article-date">
+  	<time datetime="2021-08-09T14:56:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="内网访问博客流程"><a href="#内网访问博客流程" class="headerlink" title="内网访问博客流程"></a>内网访问博客流程</h2><p>上篇已经实现在Nanopi NEO上运行Ubuntu系统，实现内网访问博客必须要有个服务器，在Nanopi NEO中下载一个服务器，将网页文件导入使其运行，获取Nanopi NEO的IP地址，在浏览器中输入IP地址，即可看到自己的博客。</p>
+<h2 id="Nginx服务器"><a href="#Nginx服务器" class="headerlink" title="Nginx服务器"></a>Nginx服务器</h2><p>Nginx是一个高性能的HTTP和反向代理web服务器，其特点是占有内存少，并发能力强。</p>
+<ul>
+<li><h3 id="安装Nginx服务器"><a href="#安装Nginx服务器" class="headerlink" title="安装Nginx服务器"></a>安装Nginx服务器</h3></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="修改Nginx的配置文件"><a href="#修改Nginx的配置文件" class="headerlink" title="修改Nginx的配置文件"></a>修改Nginx的配置文件</h3></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/nginx/sites-available/default</span><br></pre></td></tr></table></figure>
+<p>修改存放网页的路径，/home/pi/WorkSpace/Web/www，此路径为我创建并存放网页的路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Don&#39;t use them in a production server!</span><br><span class="line">  #</span><br><span class="line">  # include snippets&#x2F;snakeoil.conf;</span><br><span class="line"></span><br><span class="line">  root &#x2F;home&#x2F;pi&#x2F;WorkSpace&#x2F;Web&#x2F;www;</span><br><span class="line"></span><br><span class="line">  # Add index.php to the list if you are using PHP</span><br><span class="line">  index index.html index.htm index.nginx-debian.html;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h3></li>
+</ul>
+<p>将网页的加载路径修改之后会导致Nignx无法加载网页，经过查阅及个人多次试验发现导致此现象的情况为Nignx没有权限访问文件夹里面的内容，所有需要修改文件夹的权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+x /home</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+x /home/pi</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="加载Nginx的配置"><a href="#加载Nginx的配置" class="headerlink" title="加载Nginx的配置"></a>加载Nginx的配置</h3></li>
+</ul>
+<p>修改配置文件后，需重新加载配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/nginx reload</span><br></pre></td></tr></table></figure>
+<h3 id="启动Nginx"><a href="#启动Nginx" class="headerlink" title="启动Nginx"></a>启动Nginx</h3><p>启动Nginx前先将网页文件导入至配置文件中的网页文件存放路径</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/nginx start</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="关闭Nginx"><a href="#关闭Nginx" class="headerlink" title="关闭Nginx"></a>关闭Nginx</h3></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/nginx stop</span><br></pre></td></tr></table></figure>
+<h2 id="导入网页文件"><a href="#导入网页文件" class="headerlink" title="导入网页文件"></a>导入网页文件</h2><p>上篇提到如何获取Nano pi的IP地址，这时使用FTP协议即可将网页文件导入Nanopi NEO的/home/pi/WorkSpace/Web/www中，传输工具选用<a target="_blank" rel="noopener" href="https://www.filezilla.cn/">FileZilla</a>。</p>
+<ul>
+<li><h3 id="软件界面"><a href="#软件界面" class="headerlink" title="软件界面"></a>软件界面</h3></li>
+</ul>
+<p>软件界面如下</p>
+<img src="/2021/08/09/Nanopi-Intranet/gsdf.webp" class title="gsdf">
+
+<ul>
+<li><h3 id="传输过程"><a href="#传输过程" class="headerlink" title="传输过程"></a>传输过程</h3></li>
+</ul>
+<p>输入IP地址，用户名，密码，端口为22即可连接并传输文件</p>
+<img src="/2021/08/09/Nanopi-Intranet/fdsf.webp" class title="fdsf">
+
+<h2 id="内网访问博客"><a href="#内网访问博客" class="headerlink" title="内网访问博客"></a>内网访问博客</h2><p>启动Nginx后，在浏览器中输入IP地址即可访问到博客了</p>
+<img src="/2021/08/09/Nanopi-Intranet/asds.webp" class title="asds">
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>内网访问的过程还是比较简单的，这还只是个开始，此时博客的状态还只能在局域网内访问，别人是无法访问的。拖更这么久终于抽空把内网访问的教程写完。↓↓↓（打赏区）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">教学篇</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nanopi NEO</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">内网访问</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/09/Nanopi-Intranet/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Nanopi-login" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -170,34 +431,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Naopi NEO之前需要将Ubuntu系统刷入 其内，然后输入用户名和密码进行开发。官网有烧录教程和镜像，这里就不多说，仔细讲讲官网没有的登录方式。一种有线连接和两种无线连接分别为：UART连接，SSH连接，VNC连接。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Naopi NEO之前需要将Ubuntu系统刷入其内，然后输入用户名和密码进行开发。官网有烧录教程和镜像，这里就不多说，仔细讲讲官网没有的登录方式。一种有线连接和两种无线连接分别为：UART连接，SSH连接，VNC连接。</p>
 <h2 id="Ubuntu镜像烧录"><a href="#Ubuntu镜像烧录" class="headerlink" title="Ubuntu镜像烧录"></a>Ubuntu镜像烧录</h2><p>Ubuntu镜像烧录可以查看<a target="_blank" rel="noopener" href="https://wiki.friendlyarm.com/wiki/index.php/NanoPi_NEO/zh"><u>友善之臂官网教程</u></a>，按官网教程烧录。提醒：烧录完成后系统提示将SD卡格式化，不要格式化直接弹出SD卡即可，官网没有提醒此事。</p>
-<h2 id="UART登入"><a href="#UART登入" class="headerlink" title="UART登入"></a>UART登入</h2><p>镜像烧录完成后使用PUTTY软件中的串口连接登录，<a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"><u>PUTTY</u></a>_是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件。</p>
+<h2 id="UART登录"><a href="#UART登录" class="headerlink" title="UART登录"></a>UART登录</h2><p>镜像烧录完成后使用PUTTY软件中的串口连接登录，<a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"><u>PUTTY</u></a>_是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件。</p>
 <ul>
 <li><h3 id="配置界面"><a href="#配置界面" class="headerlink" title="配置界面"></a>配置界面</h3></li>
 </ul>
 <p>连接方式选择串口连接，串口使用自己的端口，波特率选115200。</p>
-<img src="/2021/08/03/Nanopi-login/NY9~QIUBZB%25HS7@ZPCTMB%25J.png" class title="NY9~QIUBZB%HS7@ZPCTMB%J">
+<img src="/2021/08/03/Nanopi-login/NY9_QIUBZB%25HS7@ZPCTMB%25J.webp" class title="NY9_QIUBZB%HS7@ZPCTMB%J">
 
 <ul>
 <li><h3 id="登录界面"><a href="#登录界面" class="headerlink" title="登录界面"></a>登录界面</h3></li>
 </ul>
 <p>串口连接好之后登录账号密码即可看到如下画面代表成功进入系统，输入以下命令即可看到IP地址。进入系统即可写shell脚本了。这种登录方式一定要有线连接，比较麻烦。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-<img src="/2021/08/03/Nanopi-login/nao1klk.png" class title="nao1klk">
+<img src="/2021/08/03/Nanopi-login/nao1klk.webp" class title="nao1klk">
 
 <h2 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h2><p>插入网线，串口登录后使用<code>ifconfig</code>获取Naonopi NEO的IP地址后，还是使用PUTTY软件登录。</p>
 <ul>
 <li><h3 id="配置界面-1"><a href="#配置界面-1" class="headerlink" title="配置界面"></a>配置界面</h3></li>
 </ul>
 <p>连接方式选择SSH连接，填入IP地址，端口填22。</p>
-<img src="/2021/08/03/Nanopi-login/nao22dyt.png" class title="nao22dyt">
+<img src="/2021/08/03/Nanopi-login/nao22dyt.webp" class title="nao22dyt">
 
 <ul>
 <li><h3 id="登录界面-1"><a href="#登录界面-1" class="headerlink" title="登录界面"></a>登录界面</h3></li>
 </ul>
 <p>IP地址填写正确之后登录账号密码即可看到如下画面代表成功进入系统，进入系统即可写shell脚本了。这种登录方式为无线连接，比较方便。</p>
-<img src="/2021/08/03/Nanopi-login/neo33d.png" class title="neo33d">
+<img src="/2021/08/03/Nanopi-login/neo33d.webp" class title="neo33d">
 
 <h2 id="VNC-xfce4登录"><a href="#VNC-xfce4登录" class="headerlink" title="VNC+xfce4登录"></a>VNC+xfce4登录</h2><p>上面两种方式登录后开发是没有图形界面的，此Ubuntu镜像默认不带图形界面。因此需先安装xfce4搭建桌面环境，然后利用VNC远程连接从而实现远程桌面，windows端或者手机端下载<a target="_blank" rel="noopener" href="https://www.realvnc.com/en/connect/download/viewer/"><u>VNC Viewer</u></a>软件进行远程连接Nanopi NEO。利用SSH连接输入以下命令进行VNC+xfce4的登录的配置。</p>
 <ul>
@@ -216,7 +477,7 @@
 <li><h3 id="修改VNC配置文件"><a href="#修改VNC配置文件" class="headerlink" title="修改VNC配置文件"></a>修改VNC配置文件</h3></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi .vnc&#x2F;xstartup</span><br></pre></td></tr></table></figure>
-<p>输入以上命令后按**<code>i</code>**键进入配置文件，将配置文件改成以下格式，使得VNC启动时调用xfce4加载桌面。</p>
+<p>输入以上命令后按<code>i</code>键进入配置文件，将配置文件改成以下格式，使得VNC启动时调用xfce4加载桌面。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span> </span><br><span class="line"></span><br><span class="line">unset SESSION_MANAGER </span><br><span class="line">exec /etc/X11/xinit/xinitrc </span><br><span class="line"></span><br><span class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup </span><br><span class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources </span><br><span class="line">xsetroot -solid grey </span><br><span class="line">vncconfig -iconic &amp; </span><br><span class="line">xfce4-session &amp;</span><br></pre></td></tr></table></figure>
 <p>按<code>ESC</code>退出编辑模式，输入<code>：wq</code>保存并退出，保存并退出后输入以下命令修改启动文件权限。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x ~/.vnc/xstartup</span><br></pre></td></tr></table></figure>
@@ -232,23 +493,23 @@
 <li><h3 id="配置界面-2"><a href="#配置界面-2" class="headerlink" title="配置界面"></a>配置界面</h3></li>
 </ul>
 <p>输入IP地址和设置的VNC连接密码进入远程桌面</p>
-<img src="/2021/08/03/Nanopi-login/qeew4dr.png" class title="qeew4dr">
+<img src="/2021/08/03/Nanopi-login/qeew4dr.webp" class title="qeew4dr">
 
 <ul>
 <li><h3 id="windows端登录界面"><a href="#windows端登录界面" class="headerlink" title="windows端登录界面"></a>windows端登录界面</h3></li>
 </ul>
 <p>进入到以下界面，VNC+xfce4登录的远程桌面就搭建完成了，可以在Ubuntu桌面内进行开发了。操作起来非常顺畅，此刻Nanopi NEO成为了超mini电脑了。</p>
-<img src="/2021/08/03/Nanopi-login/w5qe.png" class title="w5qe">
+<img src="/2021/08/03/Nanopi-login/w5qe.webp" class title="w5qe">
 
-<img src="/2021/08/03/Nanopi-login/uuo6bj.png" class title="uuo6bj">
+<img src="/2021/08/03/Nanopi-login/uuo6bj.webp" class title="uuo6bj">
 
 <ul>
 <li><h3 id="手机端登录界面"><a href="#手机端登录界面" class="headerlink" title="手机端登录界面"></a>手机端登录界面</h3></li>
 </ul>
 <p>手机端通过VNC与Nanopi NEO连接进行远程桌面操作起来依旧非常流畅，在不想打开电脑时可以利用手机登录。</p>
-<img src="/2021/08/03/Nanopi-login/vhv8tt.jpg" class title="vhv8tt">
+<img src="/2021/08/03/Nanopi-login/vhv8tt.webp" class title="vhv8tt">
 
-<img src="/2021/08/03/Nanopi-login/dgh7jk.jpg" class title="dgh7jk">
+<img src="/2021/08/03/Nanopi-login/dgh7jk.webp" class title="dgh7jk">
 
 <h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p>输入此条命令可以使Naonopi NEO重启。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
@@ -356,36 +617,36 @@
 
 <h2 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h2><p>Nanopi NEO包装分为：一个包装壳，一份全英文说明书，一个开发板。</p>
 <h3 id="包装壳"><a href="#包装壳" class="headerlink" title="包装壳"></a>包装壳</h3><p>包装壳是以绿色为基调的包装壳，看起来很健康。包装壳上印上大大的<strong>π</strong>，其<strong>slogan</strong>和官网地址。</p>
-<img src="/2021/08/02/nanopi/IMG_20210802_220048.jpg" class title="IMG_20210802_220048">
+<img src="/2021/08/02/nanopi/IMG_20210802_220048.webp" class title="IMG_20210802_220048">
 
 <h3 id="说明书"><a href="#说明书" class="headerlink" title="说明书"></a>说明书</h3><p>说明书为一份全英文说明书，简单的介绍了Nanopi NEO的使用方法。</p>
-<img src="/2021/08/02/nanopi/IMG_20210802_220950.jpg" class title="IMG_20210802_220950">
+<img src="/2021/08/02/nanopi/IMG_20210802_220950.webp" class title="IMG_20210802_220950">
 
 <h3 id="开发板"><a href="#开发板" class="headerlink" title="开发板"></a>开发板</h3><p>开发板很小巧，只有几个硬币一样大。开发板正面可以看到四个接口：网口、USB口、电源口、SD卡插槽，背面可以看到全志H3CPU和内存。</p>
 <ul>
 <li><h4 id="正面展示a"><a href="#正面展示a" class="headerlink" title="正面展示a"></a>正面展示a</h4></li>
 </ul>
-<img src="/2021/08/02/nanopi/IMG_20210802_220611.jpg" class title="IMG_20210802_220611">
+<img src="/2021/08/02/nanopi/IMG_20210802_220611.webp" class title="IMG_20210802_220611">
 
 <ul>
 <li><h4 id="正面展示b"><a href="#正面展示b" class="headerlink" title="正面展示b"></a>正面展示b</h4></li>
 </ul>
-<img src="/2021/08/02/nanopi/IMG_20210802_220759.jpg" class title="IMG_20210802_220759">
+<img src="/2021/08/02/nanopi/IMG_20210802_220759.webp" class title="IMG_20210802_220759">
 
 <ul>
 <li><h4 id="侧面展示"><a href="#侧面展示" class="headerlink" title="侧面展示"></a>侧面展示</h4></li>
 </ul>
-<img src="/2021/08/02/nanopi/IMG_20210802_220113.jpg" class title="IMG_20210802_220113">
+<img src="/2021/08/02/nanopi/IMG_20210802_220113.webp" class title="IMG_20210802_220113">
 
 <ul>
 <li><h4 id="背面展示a"><a href="#背面展示a" class="headerlink" title="背面展示a"></a>背面展示a</h4></li>
 </ul>
-<img src="/2021/08/02/nanopi/IMG_20210802_220644.jpg" class title="IMG_20210802_220644">
+<img src="/2021/08/02/nanopi/IMG_20210802_220644.webp" class title="IMG_20210802_220644">
 
 <ul>
 <li><h4 id="背面展示b"><a href="#背面展示b" class="headerlink" title="背面展示b"></a>背面展示b</h4></li>
 </ul>
-<img src="/2021/08/02/nanopi/IMG_20210802_220729.jpg" class title="IMG_20210802_220729">
+<img src="/2021/08/02/nanopi/IMG_20210802_220729.webp" class title="IMG_20210802_220729">
 
 <h2 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h2><p>开发板已到手，接下来的时间就是给Nanopi NEO注入灵魂的时刻，下篇内容为将博客部署在Nanopi NEO上。↓↓↓（打赏区）</p>
 <p> written by：航/2021/8/2</p>
@@ -593,10 +854,6 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">初始篇</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">使用方法</a>
         		</li>
       		 
@@ -612,6 +869,85 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/07/31/Typora/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-helloworld" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/27/helloworld/">你好！世界</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/27/helloworld/" class="archive-article-date">
+  	<time datetime="2021-01-27T13:30:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="博客搭建日志"><a href="#博客搭建日志" class="headerlink" title="博客搭建日志"></a>博客搭建日志</h2><h3 id="2021-1-27：完成博客搭建"><a href="#2021-1-27：完成博客搭建" class="headerlink" title="2021/1/27：完成博客搭建"></a>2021/1/27：完成博客搭建</h3><h3 id="2021-7-31：修改博客主题并更改博客服务器"><a href="#2021-7-31：修改博客主题并更改博客服务器" class="headerlink" title="2021/7/31：修改博客主题并更改博客服务器"></a>2021/7/31：修改博客主题并更改博客服务器</h3><h3 id="……………"><a href="#……………" class="headerlink" title="……………"></a>……………</h3><p>↓↓↓↓（打赏区）</p>
+<p> written by：航/2021/1/27</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">初始篇</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hello world</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/27/helloworld/">展开全文 >></a>
         </p>
       
 
