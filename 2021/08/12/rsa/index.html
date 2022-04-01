@@ -5,42 +5,42 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yuhang-blog.github.io">
+  <link rel="dns-prefetch" href="https://gitee.com/hyperactivity_of_vessels/blog.git">
   <title>RSA算法的初识 | 航的个人站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="RSA算法原理寻找两个大素数，将它们的乘积公开作为加密密钥，寻找两个大素数简单，但是将他们的乘积进行因式分解很困难 RSA算法使用RSA算法有两种使用方法，一种是：公钥加密，私钥解密，另一种是：私钥加密，公钥解密 加密&#x2F;解密 苏珊需要和鲍勃进行加密通信，鲍勃制作了一对RSA密钥，私钥给自己用，公钥给苏珊用     苏珊给鲍勃写了一封信，使用了鲍勃的公钥进行加密     鲍勃收到加密信，使用自己的私">
+  <meta name="description" content="RSA算法原理寻找两个大素数，将它们的乘积公开作为加密密钥，寻找两个大素数简单，但是将他们的乘积进行因式分解很困难">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RSA算法的初识">
-<meta property="og:url" content="http://yuhang-blog.github.io/2021/08/12/rsa/index.html">
+<meta property="og:url" content="https://gitee.com/hyperactivity_of_vessels/blog.git/2021/08/12/rsa/index.html">
 <meta property="og:site_name" content="航的个人站">
-<meta property="og:description" content="RSA算法原理寻找两个大素数，将它们的乘积公开作为加密密钥，寻找两个大素数简单，但是将他们的乘积进行因式分解很困难 RSA算法使用RSA算法有两种使用方法，一种是：公钥加密，私钥解密，另一种是：私钥加密，公钥解密 加密&#x2F;解密 苏珊需要和鲍勃进行加密通信，鲍勃制作了一对RSA密钥，私钥给自己用，公钥给苏珊用     苏珊给鲍勃写了一封信，使用了鲍勃的公钥进行加密     鲍勃收到加密信，使用自己的私">
+<meta property="og:description" content="RSA算法原理寻找两个大素数，将它们的乘积公开作为加密密钥，寻找两个大素数简单，但是将他们的乘积进行因式分解很困难">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yuhang-blog.github.io/2021/08/12/rsa/A.png">
-<meta property="og:image" content="http://yuhang-blog.github.io/2021/08/12/rsa/B.png">
-<meta property="og:image" content="http://yuhang-blog.github.io/2021/08/12/rsa/C.png">
-<meta property="og:image" content="http://yuhang-blog.github.io/2021/08/12/rsa/D.png">
-<meta property="og:image" content="http://yuhang-blog.github.io/2021/08/12/rsa/E.png">
-<meta property="og:image" content="http://yuhang-blog.github.io/2021/08/12/rsa/F.png">
-<meta property="og:image" content="http://yuhang-blog.github.io/2021/08/12/rsa/G.png">
-<meta property="og:image" content="http://yuhang-blog.github.io/2021/08/12/rsa/H.png">
+<meta property="og:image" content="https://gitee.com/2021/08/12/rsa/A.png">
+<meta property="og:image" content="https://gitee.com/2021/08/12/rsa/B.png">
+<meta property="og:image" content="https://gitee.com/2021/08/12/rsa/C.png">
+<meta property="og:image" content="https://gitee.com/2021/08/12/rsa/D.png">
+<meta property="og:image" content="https://gitee.com/2021/08/12/rsa/E.png">
+<meta property="og:image" content="https://gitee.com/2021/08/12/rsa/F.png">
+<meta property="og:image" content="https://gitee.com/2021/08/12/rsa/G.png">
+<meta property="og:image" content="https://gitee.com/2021/08/12/rsa/H.png">
 <meta property="article:published_time" content="2021-08-12T10:48:27.000Z">
-<meta property="article:modified_time" content="2021-08-12T16:04:54.012Z">
+<meta property="article:modified_time" content="2021-08-31T03:18:22.000Z">
 <meta property="article:author" content="航">
-<meta property="article:tag" content="学习篇">
 <meta property="article:tag" content="RSA算法">
+<meta property="article:tag" content="学习篇">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yuhang-blog.github.io/2021/08/12/rsa/A.png">
+<meta name="twitter:image" content="https://gitee.com/2021/08/12/rsa/A.png">
   
     <link rel="alternative" href="/atom.xml" title="航的个人站" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: linear-gradient(200deg,#4d4d4d,#4d4d4d);
     }
   </style>
   
@@ -74,27 +74,23 @@
 	        
 				<li><a href="/archives">目录</a></li>
 	        
+				<li><a href="/about">关于我</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
-    			
-            
-    			
-            
-    			
-            
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-		        
 					<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 		        
 					<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
 		        
 					<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
+					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
 		        
 			</div>
 		</nav>
@@ -126,29 +122,33 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-			        
 						<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 			        
 						<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
 			        
 						<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
+						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">目录</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">目录</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/about">关于我</a></li>
 		        
 				</ul>
 			</nav>
@@ -184,6 +184,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="RSA算法原理"><a href="#RSA算法原理" class="headerlink" title="RSA算法原理"></a>RSA算法原理</h2><p>寻找两个大素数，将它们的乘积公开作为加密密钥，寻找两个大素数简单，但是将他们的乘积进行因式分解很困难</p>
+<a id="more"></a>
+
 <h2 id="RSA算法使用"><a href="#RSA算法使用" class="headerlink" title="RSA算法使用"></a>RSA算法使用</h2><p>RSA算法有两种使用方法，一种是：公钥加密，私钥解密，另一种是：私钥加密，公钥解密</p>
 <h3 id="加密-解密"><a href="#加密-解密" class="headerlink" title="加密/解密"></a>加密/解密</h3><ul>
 <li>苏珊需要和鲍勃进行加密通信，鲍勃制作了一对RSA密钥，私钥给自己用，公钥给苏珊用</li>
@@ -227,7 +229,7 @@
 <ul>
 <li>数字签名保证了数据的完整性和发送角色的不可抵赖性</li>
 </ul>
-<h2 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h2><p>哈希函数就是能将任意长度的数据映射为固定长度的数据的函数。哈希函数返回的值被叫做哈希值。</p>
+<h2 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h2><p>哈希函数就是能将任意长度的数据映射为固定长度的数据的函数。哈希函数返回的值被叫做哈希值</p>
 <h2 id="消息摘要"><a href="#消息摘要" class="headerlink" title="消息摘要"></a>消息摘要</h2><p>将长度不固定的消息作为输入参数，运行特定的Hash函数，生成固定长度的输出，这个输出就是Hash，也称为这个消息的消息摘要</p>
 <p>消息摘要算法是hash算法的一种，具有以下特点：</p>
 <ul>
@@ -238,7 +240,7 @@
 <li><p>单向不可逆</p>
 </li>
 </ul>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>对RSA算法有了大致了解之后，下篇利用python实现签名和验签的过程。↓↓↓（打赏区）</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>对RSA算法有了大致了解之后，下篇利用python实现签名和验签的过程</p>
 <p> written by：航/2021/8/12</p>
 
       
@@ -284,11 +286,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">学习篇</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RSA算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RSA算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">学习篇</a>
         		</li>
       		
 		</ul>
@@ -344,7 +346,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yuhang-blog.github.io/2021/08/12/rsa/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://gitee.com/hyperactivity_of_vessels/blog.git/2021/08/12/rsa/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -357,6 +359,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2021/08/23/rsa-python/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          python实现RSA签名及验签
+        
+      </div>
+    </a>
   
   
     <a href="/2021/08/09/Nanopi-Intranet/" id="article-nav-older" class="article-nav-link-wrap">
@@ -416,7 +427,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 航
+    		&copy; 2022 航
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -452,23 +463,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   <div class="tools-nav header-menu">
     
     
-      
-    
-      
-    
-      
-    
     
 
     <ul style="width: 70%">
     
     
-      
-        
-      
-        
-      
-        
     </ul>
   </div>
   <div class="tools-wrap">

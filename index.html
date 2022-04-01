@@ -5,12 +5,12 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yuhang-blog.github.io">
+  <link rel="dns-prefetch" href="https://gitee.com/hyperactivity_of_vessels/blog.git">
   <title>航的个人站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="航的个人站">
-<meta property="og:url" content="http://yuhang-blog.github.io/index.html">
+<meta property="og:url" content="https://gitee.com/hyperactivity_of_vessels/blog.git/index.html">
 <meta property="og:site_name" content="航的个人站">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="航">
@@ -19,13 +19,13 @@
     <link rel="alternative" href="/atom.xml" title="航的个人站" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: linear-gradient(200deg,#4d4d4d,#4d4d4d);
     }
   </style>
   
@@ -59,27 +59,23 @@
 	        
 				<li><a href="/archives">目录</a></li>
 	        
+				<li><a href="/about">关于我</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
-    			
-            
-    			
-            
-    			
-            
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-		        
 					<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 		        
 					<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
 		        
 					<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
+					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
 		        
 			</div>
 		</nav>
@@ -111,29 +107,33 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-			        
 						<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 			        
 						<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
 			        
 						<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
+						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">目录</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">目录</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/about">关于我</a></li>
 		        
 				</ul>
 			</nav>
@@ -149,6 +149,706 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-timer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/29/timer/">实时操作系统中如何创建无数个定时任务</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/29/timer/" class="archive-article-date">
+  	<time datetime="2022-03-29T06:30:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="硬件定时器与软件定时器"><a href="#硬件定时器与软件定时器" class="headerlink" title="硬件定时器与软件定时器"></a>硬件定时器与软件定时器</h2><p>在裸机开发中，创建定时任务一般使用的是硬件定时器，一般一个定时任务就占用一个硬件定时器，然而硬件定时器有限。不管是我使用过的华为LiteOS还是FreeRTOS，这些嵌入式实时操作系统都有软件定时器这一模块，实现方式都差不多，有了软件定时器，就可以搭配消息队列实现创建无数个定时任务。</p>
+        
+          <a class="article-more-a" href="/2022/03/29/timer/#more">继续阅读 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">LiteOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">FreeRTOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/29/timer/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-callback" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/27/callback/">浅谈回调函数</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/27/callback/" class="archive-article-date">
+  	<time datetime="2022-02-27T12:53:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是回调函数"><a href="#什么是回调函数" class="headerlink" title="什么是回调函数"></a>什么是回调函数</h2><p>在大型项目中，回调函数使用得非常普遍。什么是回调函数呢？初学者不清楚什么是回调函数，回调函数(Callback Functions)就是通过函数指针调用的函数。下面浅谈下回调函数</p>
+        
+          <a class="article-more-a" href="/2022/02/27/callback/#more">继续阅读 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">callback</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/27/callback/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-kernel" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/27/kernel/">linux系统移植—主线kernel</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/27/kernel/" class="archive-article-date">
+  	<time datetime="2021-12-27T09:53:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="下载linux源码"><a href="#下载linux源码" class="headerlink" title="下载linux源码"></a>下载linux源码</h2><p>4.13版本的linux内核源码稳定可靠，下载4.13版本的linux内核源码</p>
+        
+          <a class="article-more-a" href="/2021/12/27/kernel/#more">继续阅读 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/27/kernel/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mindoc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/22/mindoc/">ARM版MinDoc的搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/22/mindoc/" class="archive-article-date">
+  	<time datetime="2021-12-22T01:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>MinDoc 是一款针对团队开发的简单好用的文档管理系统。官方没有ARM版的安装包，网上也没有编译ARM版MinDoc的教程，那只好自己尝试下在ARM开发板上对MinDoc源码进行编译</p>
+        
+          <a class="article-more-a" href="/2021/12/22/mindoc/#more">继续阅读 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MinDoc</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/22/mindoc/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Uboot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/23/Uboot/">linux系统移植—主线Uboot及TF卡分区制作</a>
+    </h1>
+  
+
+        
+        <a href="/2021/11/23/Uboot/" class="archive-article-date">
+  	<time datetime="2021-11-23T08:36:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>linux系统移植的芯片为全志V3s，分为三大部分：Uboot，linux内核，根文件系统</p>
+        
+          <a class="article-more-a" href="/2021/11/23/Uboot/#more">继续阅读 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/23/Uboot/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-weather" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/18/weather/">带伞提示助手</a>
+    </h1>
+  
+
+        
+        <a href="/2021/11/18/weather/" class="archive-article-date">
+  	<time datetime="2021-11-18T08:14:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>说下我的痛点，遇到过很多次上班前天气很好但是下班出地铁口时开始下大雨，因没带雨伞等雨停等了许久。每天早起不一定会看天气，那能不能做一个提示助手每天进行提示？</p>
+        
+          <a class="article-more-a" href="/2021/11/18/weather/#more">继续阅读 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/11/18/weather/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-nfs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/22/nfs/">nfs远程目录挂载</a>
+    </h1>
+  
+
+        
+        <a href="/2021/10/22/nfs/" class="archive-article-date">
+  	<time datetime="2021-10-22T09:52:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>NFS：网络文件系统。手头上有两台设备，一台运行着Ubuntu系统的虚拟机，另一个是运行着Ubuntu系统的Nanopi。需要将虚拟机中的文件导入至Nanopi中，为了方便文件的传输，两台主机分别安装nfs服务端和nfs客户端，通过局域网让两台主机系统之间共享文件。将虚拟机中的共享文件目录挂载到Nanopi的本地文件目录中</p>
+        
+          <a class="article-more-a" href="/2021/10/22/nfs/#more">继续阅读 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/10/22/nfs/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-FourTypes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/01/FourTypes/">四种“1+1=2”</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/01/FourTypes/" class="archive-article-date">
+  	<time datetime="2021-09-01T10:52:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>日子转呀转，转到九月一日，转眼到了熊孩子开学的日子，也很久没更新了，那就划划水吧！那就用“四种语言”实现1+1=2，希望自己在“新学期”里能将所有的挑战化为1+1=2。打开SSH软件，输入IP地址和端口号开启远程登录，输入账号密码进入个人服务器，进入项目目录，开始1+1</p>
+        
+          <a class="article-more-a" href="/2021/09/01/FourTypes/#more">继续阅读 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">划水篇</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/01/FourTypes/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-rsa-python" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/23/rsa-python/">python实现RSA签名及验签</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/23/rsa-python/" class="archive-article-date">
+  	<time datetime="2021-08-23T12:42:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上篇RSA算法的初始，本篇将使用python实现签名和验签的流程</p>
+        
+          <a class="article-more-a" href="/2021/08/23/rsa-python/#more">继续阅读 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RSA算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/23/rsa-python/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-rsa" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -171,63 +871,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="RSA算法原理"><a href="#RSA算法原理" class="headerlink" title="RSA算法原理"></a>RSA算法原理</h2><p>寻找两个大素数，将它们的乘积公开作为加密密钥，寻找两个大素数简单，但是将他们的乘积进行因式分解很困难</p>
-<h2 id="RSA算法使用"><a href="#RSA算法使用" class="headerlink" title="RSA算法使用"></a>RSA算法使用</h2><p>RSA算法有两种使用方法，一种是：公钥加密，私钥解密，另一种是：私钥加密，公钥解密</p>
-<h3 id="加密-解密"><a href="#加密-解密" class="headerlink" title="加密/解密"></a>加密/解密</h3><ul>
-<li>苏珊需要和鲍勃进行加密通信，鲍勃制作了一对RSA密钥，私钥给自己用，公钥给苏珊用</li>
-</ul>
-<img src="/2021/08/12/rsa/A.png" class title="A">
-
-<ul>
-<li>苏珊给鲍勃写了一封信，使用了鲍勃的公钥进行加密</li>
-</ul>
-<img src="/2021/08/12/rsa/B.png" class title="B">
-
-<ul>
-<li>鲍勃收到加密信，使用自己的私钥进行解密看到信件内容</li>
-</ul>
-<img src="/2021/08/12/rsa/C.png" class title="C">
-
-<h3 id="签名-验签"><a href="#签名-验签" class="headerlink" title="签名/验签"></a>签名/验签</h3><ul>
-<li>鲍勃给苏珊写回信，利用哈希函数将消息生成消息摘要</li>
-</ul>
-<img src="/2021/08/12/rsa/D.png" class title="D">
-
-<ul>
-<li>鲍勃利用自己的私钥对消息摘要进行加密生成数字签名</li>
-</ul>
-<img src="/2021/08/12/rsa/E.png" class title="E">
-
-<ul>
-<li>鲍勃将回信和数字签名一起发送给苏珊</li>
-</ul>
-<img src="/2021/08/12/rsa/F.png" class title="F">
-
-<ul>
-<li><p>苏珊收到来信后，利用鲍勃的公钥将数字签名进行解密得到消息摘要，苏珊可以判定此信为鲍勃发送的(公钥无法签名)</p>
-<img src="/2021/08/12/rsa/G.png" class title="G">
-</li>
-<li><p>苏珊利用哈希函数将消息生成消息摘要，然后利用此消息摘要和公钥解密的消息摘要进行比较，如果两个消息摘要相同则消息未被篡改</p>
-</li>
-</ul>
-<img src="/2021/08/12/rsa/H.png" class title="H">
-
-<ul>
-<li>数字签名保证了数据的完整性和发送角色的不可抵赖性</li>
-</ul>
-<h2 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h2><p>哈希函数就是能将任意长度的数据映射为固定长度的数据的函数。哈希函数返回的值被叫做哈希值。</p>
-<h2 id="消息摘要"><a href="#消息摘要" class="headerlink" title="消息摘要"></a>消息摘要</h2><p>将长度不固定的消息作为输入参数，运行特定的Hash函数，生成固定长度的输出，这个输出就是Hash，也称为这个消息的消息摘要</p>
-<p>消息摘要算法是hash算法的一种，具有以下特点：</p>
-<ul>
-<li><p>无论输入的消息有多长，计算出来的消息摘要的长度总是固定的，计算出的结果越长，一般认为该摘要算法越安全</p>
-</li>
-<li><p>输入的消息不同，产生的消息摘要必不同，输入的消息相同，产生的消息摘要一定是相同的</p>
-</li>
-<li><p>单向不可逆</p>
-</li>
-</ul>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>对RSA算法有了大致了解之后，下篇利用python实现签名和验签的过程。↓↓↓（打赏区）</p>
-<p> written by：航/2021/8/12</p>
-
+        
+          <a class="article-more-a" href="/2021/08/12/rsa/#more">继续阅读 >></a>
+        
       
 
       
@@ -240,11 +886,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">学习篇</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RSA算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RSA算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">学习篇</a>
         		</li>
       		
 		</ul>
@@ -284,699 +930,10 @@
 
 
   
-    <article id="post-Nanopi-Intranet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/09/Nanopi-Intranet/">Nanopi NEO建立内网访问的博客</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/09/Nanopi-Intranet/" class="archive-article-date">
-  	<time datetime="2021-08-09T14:56:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="内网访问博客流程"><a href="#内网访问博客流程" class="headerlink" title="内网访问博客流程"></a>内网访问博客流程</h2><p>上篇已经实现在Nanopi NEO上运行Ubuntu系统，实现内网访问博客必须要有个服务器，在Nanopi NEO中下载一个服务器，将网页文件导入使其运行，获取Nanopi NEO的IP地址，在浏览器中输入IP地址，即可看到自己的博客。</p>
-<h2 id="Nginx服务器"><a href="#Nginx服务器" class="headerlink" title="Nginx服务器"></a>Nginx服务器</h2><p>Nginx是一个高性能的HTTP和反向代理web服务器，其特点是占有内存少，并发能力强。</p>
-<ul>
-<li><h3 id="安装Nginx服务器"><a href="#安装Nginx服务器" class="headerlink" title="安装Nginx服务器"></a>安装Nginx服务器</h3></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="修改Nginx的配置文件"><a href="#修改Nginx的配置文件" class="headerlink" title="修改Nginx的配置文件"></a>修改Nginx的配置文件</h3></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/nginx/sites-available/default</span><br></pre></td></tr></table></figure>
-<p>修改存放网页的路径，/home/pi/WorkSpace/Web/www，此路径为我创建并存放网页的路径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Don&#39;t use them in a production server!</span><br><span class="line">  #</span><br><span class="line">  # include snippets&#x2F;snakeoil.conf;</span><br><span class="line"></span><br><span class="line">  root &#x2F;home&#x2F;pi&#x2F;WorkSpace&#x2F;Web&#x2F;www;</span><br><span class="line"></span><br><span class="line">  # Add index.php to the list if you are using PHP</span><br><span class="line">  index index.html index.htm index.nginx-debian.html;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h3></li>
-</ul>
-<p>将网页的加载路径修改之后会导致Nignx无法加载网页，经过查阅及个人多次试验发现导致此现象的情况为Nignx没有权限访问文件夹里面的内容，所有需要修改文件夹的权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+x /home</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+x /home/pi</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="加载Nginx的配置"><a href="#加载Nginx的配置" class="headerlink" title="加载Nginx的配置"></a>加载Nginx的配置</h3></li>
-</ul>
-<p>修改配置文件后，需重新加载配置文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/nginx reload</span><br></pre></td></tr></table></figure>
-<h3 id="启动Nginx"><a href="#启动Nginx" class="headerlink" title="启动Nginx"></a>启动Nginx</h3><p>启动Nginx前先将网页文件导入至配置文件中的网页文件存放路径</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/nginx start</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="关闭Nginx"><a href="#关闭Nginx" class="headerlink" title="关闭Nginx"></a>关闭Nginx</h3></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/nginx stop</span><br></pre></td></tr></table></figure>
-<h2 id="导入网页文件"><a href="#导入网页文件" class="headerlink" title="导入网页文件"></a>导入网页文件</h2><p>上篇提到如何获取Nano pi的IP地址，这时使用FTP协议即可将网页文件导入Nanopi NEO的/home/pi/WorkSpace/Web/www中，传输工具选用<a target="_blank" rel="noopener" href="https://www.filezilla.cn/">FileZilla</a>。</p>
-<ul>
-<li><h3 id="软件界面"><a href="#软件界面" class="headerlink" title="软件界面"></a>软件界面</h3></li>
-</ul>
-<p>软件界面如下</p>
-<img src="/2021/08/09/Nanopi-Intranet/gsdf.webp" class title="gsdf">
-
-<ul>
-<li><h3 id="传输过程"><a href="#传输过程" class="headerlink" title="传输过程"></a>传输过程</h3></li>
-</ul>
-<p>输入IP地址，用户名，密码，端口为22即可连接并传输文件</p>
-<img src="/2021/08/09/Nanopi-Intranet/fdsf.webp" class title="fdsf">
-
-<h2 id="内网访问博客"><a href="#内网访问博客" class="headerlink" title="内网访问博客"></a>内网访问博客</h2><p>启动Nginx后，在浏览器中输入IP地址即可访问到博客了</p>
-<img src="/2021/08/09/Nanopi-Intranet/asds.webp" class title="asds">
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>内网访问的过程还是比较简单的，这还只是个开始，此时博客的状态还只能在局域网内访问，别人是无法访问的。拖更这么久终于抽空把内网访问的教程写完。↓↓↓（打赏区）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">教学篇</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nanopi NEO</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">内网访问</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/09/Nanopi-Intranet/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Nanopi-login" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/03/Nanopi-login/">Naopi NEO三种登录方式</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/03/Nanopi-login/" class="archive-article-date">
-  	<time datetime="2021-08-03T13:48:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Naopi NEO之前需要将Ubuntu系统刷入其内，然后输入用户名和密码进行开发。官网有烧录教程和镜像，这里就不多说，仔细讲讲官网没有的登录方式。一种有线连接和两种无线连接分别为：UART连接，SSH连接，VNC连接。</p>
-<h2 id="Ubuntu镜像烧录"><a href="#Ubuntu镜像烧录" class="headerlink" title="Ubuntu镜像烧录"></a>Ubuntu镜像烧录</h2><p>Ubuntu镜像烧录可以查看<a target="_blank" rel="noopener" href="https://wiki.friendlyarm.com/wiki/index.php/NanoPi_NEO/zh"><u>友善之臂官网教程</u></a>，按官网教程烧录。提醒：烧录完成后系统提示将SD卡格式化，不要格式化直接弹出SD卡即可，官网没有提醒此事。</p>
-<h2 id="UART登录"><a href="#UART登录" class="headerlink" title="UART登录"></a>UART登录</h2><p>镜像烧录完成后使用PUTTY软件中的串口连接登录，<a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"><u>PUTTY</u></a>_是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件。</p>
-<ul>
-<li><h3 id="配置界面"><a href="#配置界面" class="headerlink" title="配置界面"></a>配置界面</h3></li>
-</ul>
-<p>连接方式选择串口连接，串口使用自己的端口，波特率选115200。</p>
-<img src="/2021/08/03/Nanopi-login/NY9_QIUBZB%25HS7@ZPCTMB%25J.webp" class title="NY9_QIUBZB%HS7@ZPCTMB%J">
-
-<ul>
-<li><h3 id="登录界面"><a href="#登录界面" class="headerlink" title="登录界面"></a>登录界面</h3></li>
-</ul>
-<p>串口连接好之后登录账号密码即可看到如下画面代表成功进入系统，输入以下命令即可看到IP地址。进入系统即可写shell脚本了。这种登录方式一定要有线连接，比较麻烦。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-<img src="/2021/08/03/Nanopi-login/nao1klk.webp" class title="nao1klk">
-
-<h2 id="SSH登录"><a href="#SSH登录" class="headerlink" title="SSH登录"></a>SSH登录</h2><p>插入网线，串口登录后使用<code>ifconfig</code>获取Naonopi NEO的IP地址后，还是使用PUTTY软件登录。</p>
-<ul>
-<li><h3 id="配置界面-1"><a href="#配置界面-1" class="headerlink" title="配置界面"></a>配置界面</h3></li>
-</ul>
-<p>连接方式选择SSH连接，填入IP地址，端口填22。</p>
-<img src="/2021/08/03/Nanopi-login/nao22dyt.webp" class title="nao22dyt">
-
-<ul>
-<li><h3 id="登录界面-1"><a href="#登录界面-1" class="headerlink" title="登录界面"></a>登录界面</h3></li>
-</ul>
-<p>IP地址填写正确之后登录账号密码即可看到如下画面代表成功进入系统，进入系统即可写shell脚本了。这种登录方式为无线连接，比较方便。</p>
-<img src="/2021/08/03/Nanopi-login/neo33d.webp" class title="neo33d">
-
-<h2 id="VNC-xfce4登录"><a href="#VNC-xfce4登录" class="headerlink" title="VNC+xfce4登录"></a>VNC+xfce4登录</h2><p>上面两种方式登录后开发是没有图形界面的，此Ubuntu镜像默认不带图形界面。因此需先安装xfce4搭建桌面环境，然后利用VNC远程连接从而实现远程桌面，windows端或者手机端下载<a target="_blank" rel="noopener" href="https://www.realvnc.com/en/connect/download/viewer/"><u>VNC Viewer</u></a>软件进行远程连接Nanopi NEO。利用SSH连接输入以下命令进行VNC+xfce4的登录的配置。</p>
-<ul>
-<li><h3 id="安装cfce4"><a href="#安装cfce4" class="headerlink" title="安装cfce4"></a>安装cfce4</h3></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xfce4</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="安装VNC"><a href="#安装VNC" class="headerlink" title="安装VNC"></a>安装VNC</h3></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vnc4server</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="设置VNC连接密码"><a href="#设置VNC连接密码" class="headerlink" title="设置VNC连接密码"></a>设置VNC连接密码</h3></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vncpasswd</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="修改VNC配置文件"><a href="#修改VNC配置文件" class="headerlink" title="修改VNC配置文件"></a>修改VNC配置文件</h3></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi .vnc&#x2F;xstartup</span><br></pre></td></tr></table></figure>
-<p>输入以上命令后按<code>i</code>键进入配置文件，将配置文件改成以下格式，使得VNC启动时调用xfce4加载桌面。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span> </span><br><span class="line"></span><br><span class="line">unset SESSION_MANAGER </span><br><span class="line">exec /etc/X11/xinit/xinitrc </span><br><span class="line"></span><br><span class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup </span><br><span class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources </span><br><span class="line">xsetroot -solid grey </span><br><span class="line">vncconfig -iconic &amp; </span><br><span class="line">xfce4-session &amp;</span><br></pre></td></tr></table></figure>
-<p>按<code>ESC</code>退出编辑模式，输入<code>：wq</code>保存并退出，保存并退出后输入以下命令修改启动文件权限。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x ~/.vnc/xstartup</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="启动VNC进程"><a href="#启动VNC进程" class="headerlink" title="启动VNC进程"></a>启动VNC进程</h3></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vncserver :1</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="结束VNC进程"><a href="#结束VNC进程" class="headerlink" title="结束VNC进程"></a>结束VNC进程</h3></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vncserver -kill :1</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="配置界面-2"><a href="#配置界面-2" class="headerlink" title="配置界面"></a>配置界面</h3></li>
-</ul>
-<p>输入IP地址和设置的VNC连接密码进入远程桌面</p>
-<img src="/2021/08/03/Nanopi-login/qeew4dr.webp" class title="qeew4dr">
-
-<ul>
-<li><h3 id="windows端登录界面"><a href="#windows端登录界面" class="headerlink" title="windows端登录界面"></a>windows端登录界面</h3></li>
-</ul>
-<p>进入到以下界面，VNC+xfce4登录的远程桌面就搭建完成了，可以在Ubuntu桌面内进行开发了。操作起来非常顺畅，此刻Nanopi NEO成为了超mini电脑了。</p>
-<img src="/2021/08/03/Nanopi-login/w5qe.webp" class title="w5qe">
-
-<img src="/2021/08/03/Nanopi-login/uuo6bj.webp" class title="uuo6bj">
-
-<ul>
-<li><h3 id="手机端登录界面"><a href="#手机端登录界面" class="headerlink" title="手机端登录界面"></a>手机端登录界面</h3></li>
-</ul>
-<p>手机端通过VNC与Nanopi NEO连接进行远程桌面操作起来依旧非常流畅，在不想打开电脑时可以利用手机登录。</p>
-<img src="/2021/08/03/Nanopi-login/vhv8tt.webp" class title="vhv8tt">
-
-<img src="/2021/08/03/Nanopi-login/dgh7jk.webp" class title="dgh7jk">
-
-<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p>输入此条命令可以使Naonopi NEO重启。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
-<h2 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h2><p>输入此条命令可以使Naonopi NEO立刻关机。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -h now</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在对Nanopi NEO进行远程桌面连接时，多次出现桌面灰屏，查阅了大量资料总结出以上配置流程才将VNC配置文件修改好。现Naonopi已成功注入灵魂，将博客重新部署指日可待。↓↓↓（打赏区）</p>
-<p> written by：航/2021/8/3</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">教学篇</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">配置</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Naopi NEO</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/03/Nanopi-login/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-nanopi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/02/nanopi/">Nanopi NEO开箱图文</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/02/nanopi/" class="archive-article-date">
-  	<time datetime="2021-08-02T14:21:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>将博客部署在github上，由于使用的是国外服务器，使得博客加载缓慢。于是萌生了自己搭建一个服务器的想法，使用电脑当服务器或者使用云服务器有点大材小用，浪费资源和成本太高。使用一个能运行Ubuntu系统并且价格便宜的开发板能够完美解决此问题。</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Nanopi NEO是FriendlyARM(友善之臂)开发的一款小巧的开发板。此开发板非常mini，插上网线和电源放在角落完全不占地方，并且全志H3芯片的性能完全够用。</p>
-<h3 id="主要硬件规格"><a href="#主要硬件规格" class="headerlink" title="主要硬件规格"></a>主要硬件规格</h3><ul>
-<li>CPU：全志 H3，四核 Cortex-A7 高达 1.2GHz</li>
-<li>DDR3 内存：256MB/512MB</li>
-<li>网口：10/100M以太网</li>
-<li>USB ：A 型 x 1</li>
-<li>MicroSD ：插槽 x 1</li>
-</ul>
-<h3 id="主要软件功能"><a href="#主要软件功能" class="headerlink" title="主要软件功能"></a>主要软件功能</h3><ul>
-<li>Linux</li>
-<li>Ubuntu</li>
-<li>Android</li>
-</ul>
-<h3 id="尺寸图"><a href="#尺寸图" class="headerlink" title="尺寸图"></a>尺寸图</h3><p>Nanopi NEO的PCB尺寸小至40×40毫米。</p>
-<img src="/2021/08/02/nanopi/NanoPi-NEO-1606-dimensions.png" class title="NanoPi-NEO-1606-dimensions">
-
-<h2 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h2><p>Nanopi NEO包装分为：一个包装壳，一份全英文说明书，一个开发板。</p>
-<h3 id="包装壳"><a href="#包装壳" class="headerlink" title="包装壳"></a>包装壳</h3><p>包装壳是以绿色为基调的包装壳，看起来很健康。包装壳上印上大大的<strong>π</strong>，其<strong>slogan</strong>和官网地址。</p>
-<img src="/2021/08/02/nanopi/IMG_20210802_220048.webp" class title="IMG_20210802_220048">
-
-<h3 id="说明书"><a href="#说明书" class="headerlink" title="说明书"></a>说明书</h3><p>说明书为一份全英文说明书，简单的介绍了Nanopi NEO的使用方法。</p>
-<img src="/2021/08/02/nanopi/IMG_20210802_220950.webp" class title="IMG_20210802_220950">
-
-<h3 id="开发板"><a href="#开发板" class="headerlink" title="开发板"></a>开发板</h3><p>开发板很小巧，只有几个硬币一样大。开发板正面可以看到四个接口：网口、USB口、电源口、SD卡插槽，背面可以看到全志H3CPU和内存。</p>
-<ul>
-<li><h4 id="正面展示a"><a href="#正面展示a" class="headerlink" title="正面展示a"></a>正面展示a</h4></li>
-</ul>
-<img src="/2021/08/02/nanopi/IMG_20210802_220611.webp" class title="IMG_20210802_220611">
-
-<ul>
-<li><h4 id="正面展示b"><a href="#正面展示b" class="headerlink" title="正面展示b"></a>正面展示b</h4></li>
-</ul>
-<img src="/2021/08/02/nanopi/IMG_20210802_220759.webp" class title="IMG_20210802_220759">
-
-<ul>
-<li><h4 id="侧面展示"><a href="#侧面展示" class="headerlink" title="侧面展示"></a>侧面展示</h4></li>
-</ul>
-<img src="/2021/08/02/nanopi/IMG_20210802_220113.webp" class title="IMG_20210802_220113">
-
-<ul>
-<li><h4 id="背面展示a"><a href="#背面展示a" class="headerlink" title="背面展示a"></a>背面展示a</h4></li>
-</ul>
-<img src="/2021/08/02/nanopi/IMG_20210802_220644.webp" class title="IMG_20210802_220644">
-
-<ul>
-<li><h4 id="背面展示b"><a href="#背面展示b" class="headerlink" title="背面展示b"></a>背面展示b</h4></li>
-</ul>
-<img src="/2021/08/02/nanopi/IMG_20210802_220729.webp" class title="IMG_20210802_220729">
-
-<h2 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h2><p>开发板已到手，接下来的时间就是给Nanopi NEO注入灵魂的时刻，下篇内容为将博客部署在Nanopi NEO上。↓↓↓（打赏区）</p>
-<p> written by：航/2021/8/2</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">开箱篇</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图文介绍</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nanopi NEO</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/02/nanopi/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Typora" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/31/Typora/">Markdown文本编辑器的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/31/Typora/" class="archive-article-date">
-  	<time datetime="2021-07-31T06:44:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>博客服务器搭建完成后，如何写博客非常重要，推荐的Markdown文本编辑器为Typora。具有界面简洁和使用简单等特点。</p>
-<h2 id="Typora界面"><a href="#Typora界面" class="headerlink" title="Typora界面"></a>Typora界面</h2><img src="/2021/07/31/Typora/1627716349(1).png" class title="1627716349(1)">
-
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>六种标题的显示效果如下：</p>
-<blockquote>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></blockquote>
-<p>六种标题的快捷键如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+1</span><br><span class="line">Ctrl+2</span><br><span class="line">Ctrl+3</span><br><span class="line">Ctrl+4</span><br><span class="line">Ctrl+5</span><br><span class="line">Ctrl+6</span><br></pre></td></tr></table></figure>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>有序排序的显示效果如下：</p>
-<blockquote>
-<ol>
-<li>一<ol>
-<li>二</li>
-</ol>
-</li>
-<li>三</li>
-</ol>
-</blockquote>
-<p>有序排序的快捷键如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+Shift+&#123; ##新建有序列表</span><br><span class="line">Tab          ##生成子列表</span><br><span class="line">Shift+Tab    ##返回上一级列表</span><br></pre></td></tr></table></figure>
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>无序列表的显示效果如下：</p>
-<blockquote>
-<ul>
-<li>一<ul>
-<li>二</li>
-</ul>
-</li>
-<li>三</li>
-</ul>
-</blockquote>
-<p>无序列表的快捷键如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+Shift+&#125; ##新建无序列表</span><br></pre></td></tr></table></figure>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p><a target="_blank" rel="noopener" href="https://typora.io/">点击此处进入Typora官网</a>，可以在官网下载此软件。超链接的使用方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[点击此处进入Typora官网](https:&#x2F;&#x2F;typora.io&#x2F;)</span><br></pre></td></tr></table></figure>
-<h2 id="划重点"><a href="#划重点" class="headerlink" title="划重点"></a>划重点</h2><p>划重点可以从Typora软件中格式中调整，效果如下：</p>
-<ul>
-<li><strong>加粗 1234567890</strong></li>
-<li><em>斜体 1234567890</em></li>
-<li><code>背影 1234567890</code></li>
-<li><u>下划线 1234567890</u></li>
-<li><del>删除线 1234567890</del></li>
-</ul>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>表格的显示效果如下：</p>
-<ul>
-<li>文件/文件夹管理命令</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Ubuntu系统基本命令</th>
-<th>命令含义及介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ls</td>
-<td>列出当前目录文件（不包括隐含文件）</td>
-</tr>
-<tr>
-<td>ls -a</td>
-<td>列出当前目录文件（包括隐含文件）</td>
-</tr>
-<tr>
-<td>ls -l</td>
-<td>列出当前目录下文件的详细信息</td>
-</tr>
-<tr>
-<td>cd ..</td>
-<td>回当前目录的上一级目录</td>
-</tr>
-<tr>
-<td>cd -</td>
-<td>回上一次所在的目录</td>
-</tr>
-<tr>
-<td>cd ~</td>
-<td>或 cd 回当前用户的宿主目录</td>
-</tr>
-<tr>
-<td>mkdir 目录名</td>
-<td>创建一个目录</td>
-</tr>
-<tr>
-<td>rmdir 空目录名</td>
-<td>删除一个空目录</td>
-</tr>
-<tr>
-<td>rm 文件名 文件名</td>
-<td>删除一个文件或多个文件</td>
-</tr>
-<tr>
-<td>rm -rf 非空目录名</td>
-<td>删除一个非空目录下的一切</td>
-</tr>
-<tr>
-<td>mv 文件名 新名称</td>
-<td>在当前目录下改名</td>
-</tr>
-</tbody></table>
-<p>表格的快捷键如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+T</span><br></pre></td></tr></table></figure>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p>B站分享链接在分享按钮里面的嵌入代码，添加的视频代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> </span></span><br><span class="line"><span class="tag"><span class="attr">src</span>=<span class="string">&quot;B站分享链接提供&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">border</span>=<span class="string">&quot;0&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">height</span>=<span class="string">640</span> </span></span><br><span class="line"><span class="tag"><span class="attr">width</span>=<span class="string">1260</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>视频显示效果如下：</p>
-<ul>
-<li>此视频为Typora的使用教程，感觉不错，分享一下</li>
-</ul>
-<iframe src="//player.bilibili.com/player.html?aid=669041636&bvid=BV1ka4y1E7WB&cid=220674497&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>Typora的基本使用方法就介绍到这了！↓↓↓↓（打赏区）</p>
-<p> written by：航/2021/7/31                                                                                                                   </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">使用方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Typora</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/31/Typora/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-helloworld" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/27/helloworld/">你好！世界</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/27/helloworld/" class="archive-article-date">
-  	<time datetime="2021-01-27T13:30:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="博客搭建日志"><a href="#博客搭建日志" class="headerlink" title="博客搭建日志"></a>博客搭建日志</h2><h3 id="2021-1-27：完成博客搭建"><a href="#2021-1-27：完成博客搭建" class="headerlink" title="2021/1/27：完成博客搭建"></a>2021/1/27：完成博客搭建</h3><h3 id="2021-7-31：修改博客主题并更改博客服务器"><a href="#2021-7-31：修改博客主题并更改博客服务器" class="headerlink" title="2021/7/31：修改博客主题并更改博客服务器"></a>2021/7/31：修改博客主题并更改博客服务器</h3><h3 id="……………"><a href="#……………" class="headerlink" title="……………"></a>……………</h3><p>↓↓↓↓（打赏区）</p>
-<p> written by：航/2021/1/27</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">初始篇</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hello world</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/27/helloworld/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -987,7 +944,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 航
+    		&copy; 2022 航
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1023,23 +980,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   <div class="tools-nav header-menu">
     
     
-      
-    
-      
-    
-      
-    
     
 
     <ul style="width: 70%">
     
     
-      
-        
-      
-        
-      
-        
     </ul>
   </div>
   <div class="tools-wrap">
