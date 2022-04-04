@@ -17,8 +17,9 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.wangyuhang.top/2022/03/29/timer/a1.png">
 <meta property="og:image" content="https://www.wangyuhang.top/2022/03/29/timer/b.jpg">
+<meta property="og:image" content="https://www.wangyuhang.top/2022/03/29/timer/d.png">
 <meta property="article:published_time" content="2022-03-29T06:30:49.000Z">
-<meta property="article:modified_time" content="2022-03-30T10:13:19.931Z">
+<meta property="article:modified_time" content="2022-04-04T12:21:08.810Z">
 <meta property="article:author" content="航">
 <meta property="article:tag" content="LiteOS">
 <meta property="article:tag" content="FreeRTOS">
@@ -209,8 +210,12 @@
 <p>应用层软件定时器的简单封装思路如下：</p>
 <img src="/2022/03/29/timer/b.jpg" class title="b">
 
-<h2 id="应用层软件定时器使用方式"><a href="#应用层软件定时器使用方式" class="headerlink" title="应用层软件定时器使用方式"></a>应用层软件定时器使用方式</h2><p>想要使用定时功能，只要先枚举出功能名，然后在case里面添加具体功能，再使用应用层软件定时器启动即枚举的功能名即可。</p>
-<p>这里只是简单地提供利用嵌入式实时操作系统提供的软件定时器及消息队列模块实现创建无数个定时任务的思路。</p>
+<h2 id="应用层软件定时器使用方式"><a href="#应用层软件定时器使用方式" class="headerlink" title="应用层软件定时器使用方式"></a>应用层软件定时器使用方式</h2><p>以下为封装后的应用层软件定时器的DEMO结果，DEMO的功能为：创建10个周期为1s的周期性软件定时器，打印出周期性软件定时器运行次数。如需要大量软件定时器，需要在FreeRTOSConfig.h文件中修改软件定时器队列长度，即可使用的软件定时器数量。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> configTIMER_QUEUE_LENTH 10</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/03/29/timer/d.png" class title="d">
+
+<p>想要使用定时功能，只要先枚举出功能名，然后在case里面添加具体功能，再使用应用层软件定时器启动即枚举的功能名即可。这里只是简单地提供利用嵌入式实时操作系统提供的软件定时器及消息队列模块实现创建无数个定时任务的思路。</p>
 <p>written by：航&#x2F;2022&#x2F;3&#x2F;29</p>
 
       
