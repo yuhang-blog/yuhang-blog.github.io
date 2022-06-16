@@ -21,8 +21,10 @@
 <meta property="og:image" content="https://www.wangyuhang.top/2022/05/23/switch-hardware/a4.png">
 <meta property="og:image" content="https://www.wangyuhang.top/2022/05/23/switch-hardware/a5.jpg">
 <meta property="og:image" content="https://www.wangyuhang.top/2022/05/23/switch-hardware/a6.jpg">
+<meta property="og:image" content="https://www.wangyuhang.top/2022/05/23/switch-hardware/a7.jpg">
+<meta property="og:image" content="https://www.wangyuhang.top/2022/05/23/switch-hardware/a8.jpg">
 <meta property="article:published_time" content="2022-05-23T07:57:07.000Z">
-<meta property="article:modified_time" content="2022-06-08T12:09:40.644Z">
+<meta property="article:modified_time" content="2022-06-16T11:06:09.503Z">
 <meta property="article:author" content="航">
 <meta property="article:tag" content="智能开关">
 <meta property="article:tag" content="智能家居">
@@ -182,7 +184,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h2><p>入行智能家居一年左右了，想着自己就是搞智能家居的人却没用到自己的日常生活中，属实遗憾！何不自己设计硬件及软件制作一款智能开关给自己使用？<span id="more"></span></p>
-<h2 id="功能需求"><a href="#功能需求" class="headerlink" title="功能需求"></a>功能需求</h2><p>不需要复杂的控制方式，离线语音控制就足够满足日常使用体验。离线语音开关内置词条，能通过识别到不同的词条进行以下操作：控制不同的灯具，播报使用指南，调整播报音，定时功能以及自动压力测试。可通过按键绑定灯种类，词条基本覆盖市面上常见的灯具种类</p>
+<h2 id="功能需求"><a href="#功能需求" class="headerlink" title="功能需求"></a>功能需求</h2><p>不需要复杂的控制方式，不需要网络，离线语音控制就足够满足日常使用体验。离线语音开关内置词条，能通过识别到不同的词条进行以下操作：控制不同的灯具，播报使用指南，调整播报音，定时功能以及自动压力测试。可通过按键绑定灯种类，词条基本覆盖市面上常见的灯具种类</p>
 <h2 id="硬件设计"><a href="#硬件设计" class="headerlink" title="硬件设计"></a>硬件设计</h2><p>采购几个86开关外壳，根据外壳尺寸进行硬件设计。智能开关的PCB分为上下板进行强弱电隔离，下面板为电源板，上面板为按键板</p>
 <img src="/2022/05/23/switch-hardware/a1.jpg" class title="a1">
 
@@ -203,14 +205,18 @@
 <h3 id="按键板"><a href="#按键板" class="headerlink" title="按键板"></a>按键板</h3><p>按键板的供电通过排针及排母从电源板引入，按键板主要组成有：MCU外围电路，5V转3.3V，按键电路，背光电路。这些都比较简单，画PCB的时候需要注意预留下载点以及其他的端口测试触点</p>
 <img src="/2022/05/23/switch-hardware/a3.png" class title="a3">
 
-<h2 id="软件设计"><a href="#软件设计" class="headerlink" title="软件设计"></a>软件设计</h2><p>离线语音开关的软件部分采用FreeRTOS开发，软件设计框架大致如下</p>
+<h2 id="软件设计"><a href="#软件设计" class="headerlink" title="软件设计"></a>软件设计</h2><p>离线语音开关的软件部分采用FreeRTOS开发，软件设计框架大致如下：</p>
 <img src="/2022/05/23/switch-hardware/a4.png" class title="a4">
 
-<h2 id="体验感受"><a href="#体验感受" class="headerlink" title="体验感受"></a>体验感受</h2><p>经过小小的压力测试然后长时间使用，继电器也没出现粘连现象，日常使用没什么问题。冬天躲被窝再也不用为了关灯而烦恼</p>
+<h2 id="体验感受"><a href="#体验感受" class="headerlink" title="体验感受"></a>体验感受</h2><p>经过小小的压力测试然后长时间使用，继电器也没出现粘连现象，日常使用没什么问题。冬天躲被窝再也不用为了关灯而烦恼，只需要喊上一句“关灯”即可</p>
 <img src="/2022/05/23/switch-hardware/a5.jpg" class title="a5">
 
-<h2 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h2><p>外壳用料太差了，准备换一套外壳，制作第二版并加上ZIGBEE搭配出三款：语音，ZIGBEE，语音+ZIGBEE</p>
+<h2 id="第二版"><a href="#第二版" class="headerlink" title="第二版"></a>第二版</h2><p>外壳用料太差了，准备换一套外壳，重新制作了第二版的PCB。</p>
 <img src="/2022/05/23/switch-hardware/a6.jpg" class title="a6">
+
+<img src="/2022/05/23/switch-hardware/a7.jpg" class title="a7">
+
+<img src="/2022/05/23/switch-hardware/a8.jpg" class title="a8">
 
 <p>written by：航&#x2F;2022&#x2F;5&#x2F;23</p>
 
@@ -360,7 +366,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%97%9B%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">痛点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82"><span class="toc-number">2.</span> <span class="toc-text">功能需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">硬件设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E6%BA%90%E6%9D%BF"><span class="toc-number">3.1.</span> <span class="toc-text">电源板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E9%94%AE%E6%9D%BF"><span class="toc-number">3.2.</span> <span class="toc-text">按键板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.</span> <span class="toc-text">软件设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%93%E9%AA%8C%E6%84%9F%E5%8F%97"><span class="toc-number">5.</span> <span class="toc-text">体验感受</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%91%8A"><span class="toc-number">6.</span> <span class="toc-text">预告</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%97%9B%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">痛点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82"><span class="toc-number">2.</span> <span class="toc-text">功能需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">硬件设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E6%BA%90%E6%9D%BF"><span class="toc-number">3.1.</span> <span class="toc-text">电源板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E9%94%AE%E6%9D%BF"><span class="toc-number">3.2.</span> <span class="toc-text">按键板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.</span> <span class="toc-text">软件设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%93%E9%AA%8C%E6%84%9F%E5%8F%97"><span class="toc-number">5.</span> <span class="toc-text">体验感受</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%89%88"><span class="toc-number">6.</span> <span class="toc-text">第二版</span></a></li></ol>
                     </div>
                 </span>
             </div>
